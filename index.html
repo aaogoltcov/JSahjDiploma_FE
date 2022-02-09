@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JS AHJ DIPLOMA</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+</head>
+<body>
+
+  <div class="page-content page-container" id="page-content">
+    <div class="padding">
+      <div class="row container d-flex justify-content-center">
+        <div class="col-md-6">
+          <div class="card card-bordered">
+            <div class="publisher bt-1 border-light pinned-message"></div>
+            <div class="ps-container ps-theme-default ps-active-y" id="chat-content" style="overflow-y: scroll !important; height:400px !important;">
+              <div class="chat-body"></div>
+              <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+                <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+              </div>
+              <div class="ps-scrollbar-y-rail" style="top: 0px; height: 0px; right: 2px;">
+                <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 2px;"></div>
+              </div>
+            </div>
+            <div class="publisher bt-1 border-light">
+                <img class="avatar avatar-xs" src="https://img.icons8.com/color/48/000000/bt21-shooky.png">
+                <input class="publisher-input" type="text" placeholder="Write something">
+                  <span class="publisher-btn file-group">
+                    <i class="fa fa-paperclip file-browser"></i>
+                    <input type="file" id="input" multiple>
+                  </span>
+              <a class="publisher-btn" href="#" data-abc="true">
+                <i class="fa fa-smile"></i>
+              </a>
+              <a class="publisher-btn" href="#" data-abc="true">
+                <i class="fas fa-video"></i>
+              </a>
+              <a class="publisher-btn text-info" href="#" data-abc="true">
+                <i class="fa fa-paper-plane" id="chat-button"></i>
+              </a>
+            </div>
+            <div class="list-group"></div>
+            <div class="geo-container"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="videoRecordingModal" tabindex="-1" role="dialog" aria-labelledby="videoRecordingModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered video" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Video recording</h5>
+          <button id="upCloseButton" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="left" style="width: 50%;">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="startButton">Start</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="stopButton">Stop</button>
+            <h3>Preview</h3>
+            <video id="preview" autoplay muted></video>
+          </div>
+          <div class="right" style="width: 50%;">
+
+            <h3>Recording</h3>
+            <video id="recording" controls></video>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="downCloseButton" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button id="downloadButton" type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

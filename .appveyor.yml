@@ -1,0 +1,22 @@
+image: Ubuntu1804 # образ для сборки
+stack: node 12 # окружение
+branches:
+  only:
+    - master # ветка git
+cache: node_modules # кеширование
+install:
+  - yarn install # команда установки зависимостей
+build: off
+build_script:
+  - yarn build # команда сборки
+#test_script:
+#  - yarn test # скрипт тестирования
+environment:
+  access_token:
+    secure: zvJf04PyuDyqf4jjwwyBrw9chz6Q9x7OeBPN0jYQ9Y80ygA4VMOO4pimFzC8jgyt
+deploy_script: # скрипт развёртывания
+  - git config --global credential.helper store
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
+  - git config --global user.name "aaogoltcov"
+  - git config --global user.email "aaogoltcov@mail.ru"
+  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
