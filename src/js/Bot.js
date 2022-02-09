@@ -14,8 +14,8 @@ export default class Bot {
     this.pinnedMessageContainer = document.querySelector('.pinned-message');
 
     // Websocket
-    this.ws = new WebSocket('ws://localhost:7070');
-    this.url = 'http://localhost:7070'
+    this.ws = new WebSocket('wss://jsahjdiplomabe.herokuapp.com');
+    this.url = 'https://jsahjdiplomabe.herokuapp.com'
 
     // Upload files
     this.fileSelect = document.querySelector('.file-browser');
